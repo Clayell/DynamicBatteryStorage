@@ -144,6 +144,11 @@ namespace DynamicBatteryStorage
           Utils.Log("[Settings]: Kerbalism detected. DBS will disable itself.", Utils.LogType.Any);
           Settings.Enabled = false;
         }
+        if (a.name.StartsWith("Kerbalism", StringComparison.Ordinal))
+        {
+          Utils.Log("[Settings]: Kerbalism detected. DBS will disable itself.", Utils.LogType.Any);
+          Settings.Enabled = false;
+        }
         // Search for kopernicus
         if (a.name.StartsWith("Kopernicus", StringComparison.Ordinal))
         {
@@ -162,7 +167,7 @@ namespace DynamicBatteryStorage
         if (a.name.StartsWith("WeatherDrivenSolarPanel", StringComparison.Ordinal))
         {
           WeatherDrivenSolarPanel = true;
-          Utils.Log($"[Settings] Weather Dependent Solar Panel logic is  Multi Star Logic is {WeatherDrivenSolarPanel}", Utils.LogType.Any);
+          Utils.Log($"[Settings] Weather Dependent Solar Panel logic is {WeatherDrivenSolarPanel}", Utils.LogType.Any);
         }
           
       }
