@@ -143,11 +143,13 @@ namespace DynamicBatteryStorage
         {
           Utils.Log("[Settings]: Kerbalism detected. DBS will disable itself.", Utils.LogType.Any);
           Settings.Enabled = false;
+          break;
         }
-        if (a.name.StartsWith("Kerbalism", StringComparison.Ordinal))
+        if (a.name.StartsWith("RealismOverhaul", StringComparison.Ordinal))
         {
-          Utils.Log("[Settings]: Kerbalism detected. DBS will disable itself.", Utils.LogType.Any);
+          Utils.Log("[Settings]: Realism Overhaul detected. DBS will disable itself.", Utils.LogType.Any);
           Settings.Enabled = false;
+          break;
         }
         // Search for kopernicus
         if (a.name.StartsWith("Kopernicus", StringComparison.Ordinal))
@@ -161,7 +163,7 @@ namespace DynamicBatteryStorage
           var msObj = starType.GetField("UseMultiStarLogic",
             BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance | BindingFlags.FlattenHierarchy).GetValue(null);
           KopernicusMultiStar = (bool)msObj;
-          Utils.Log($"[Settings] Kopernicus Multi Star Logic is {KopernicusMultiStar}",Utils.LogType.Any);
+          Utils.Log($"[Settings] Kopernicus Multi Star Logic is {KopernicusMultiStar}", Utils.LogType.Any);
         }
         // Search for wdsp
         if (a.name.StartsWith("WeatherDrivenSolarPanel", StringComparison.Ordinal))
