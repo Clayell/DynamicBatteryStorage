@@ -74,6 +74,11 @@ namespace DynamicBatteryStorage
 
       DetectMods();
 
+      if (Settings.Enabled == false)
+      {
+          return;
+      }
+
       Utils.Log("[Settings]: Started loading", Utils.LogType.Settings);
       if (GameDatabase.Instance.ExistsConfigNode(CONFIG_NODE_NAME))
       {
